@@ -5,15 +5,15 @@ function dataLine(pageNumber,numOfLines, data) {
     for ( let i=(pageNumber -1)*numOfLines+1;i<=pageNumber*numOfLines;i++){
         pageTable.push(
             <tr className='table__data'>
-                <td className='table__firstCol'>
+                <td className='table__firstCol sticky-col '>
                     <img src={chain} className='table__data_chain'/>
                     {data[i].number}
                 </td>
-                <td >{data[i].date}</td>
+                <td className='innerDivParent'>{data[i].date}</td>
                 <td >{data[i].income}</td>
                 <td>{data[i].profit}</td>
                 <td>{data[i].daysTo}</td>
-                <td>{data[i].sessions}</td>
+                <td className='innerDivParent'>{data[i].sessions}</td>
             </tr>
         )
 
