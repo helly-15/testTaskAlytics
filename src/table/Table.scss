@@ -1,72 +1,103 @@
 
-
-.table{
-  text-align: center;
-  border-collapse: collapse;
+.table-scroll {
   position: relative;
-  //table-layout: fixed;
-  tr {
-    height: 65px;
-    border: 1px solid #D5D5D5
-  }
-  tr.table__title{
-    height: 57px;
-    background: #FAFAFA;
-
-  }
-  tr.table__average{
-    height: 60px;
-    position: sticky;
-    top: 0;
-  }
-  th {
-    width: 210px;
-    min-width: 210px;
-    font-family: Tahoma, sans-serif;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 16px;
-    letter-spacing: 0.21562500298023224px;
-  }
-  th.sticky-1{
-    background: #FAFAFA;
-    position: sticky;
-    top: 0;
-    left:0;
-    box-shadow: 0 2px 2px -1px #D5D5D5;
-  }
-  th.sticky-2{
-    background: #FEF7EB;
-    position: sticky;
-    top: 57px;
-    left:0px;
-    border-bottom: 1px solid #D5D5D5
-  }
-  &__firstCol{
-    border-right: 2px solid #D5D5D5;
-
-  }
-  &__average {
-  background: #FEF7EB;
+  width:1000px;
+  z-index: 1;
+  margin: auto;
+  overflow: scroll;
+  height: 635px;
+  color: black;
 }
-&__data{
+.table-scroll tr {
+  height: 65px;
+  border: 1px solid #D5D5D5
+}
+.table-scroll table {
+  width: 100%;
+  min-width: 1280px;
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: center;
+}
+.table-wrap {
+  position: relative;
+}
+.table-scroll th,
+.table-scroll td {
+  padding: 5px 10px;
+ // border: 1px solid #000;
+  //background: #fff;
+  vertical-align: top;
+  min-width: 210px;
+  width: 210px;
+}
+.table-scroll th{
   font-family: Tahoma, sans-serif;
   font-size: 13px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 16px;
-  letter-spacing: 0.2515625059604645px;
+  letter-spacing: 0.21562500298023224px;
+}
+.table-scroll td{
+  font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.2515625059604645px;
+}
+.table-scroll thead th {
+  background: #333;
+  //color: #fff;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
 
-  &_chain{
+th:first-child {
+  position: -webkit-sticky;
+  position: sticky;
+  left: -2px;
+  z-index: 2;
+  background: white;
+}
+thead th:first-child {
+  z-index: 5;
+}
+
+
+
+ .firstCol{
+    border-right: 2px solid #D5D5D5;
+  }
+
+
+.chain{
     height: 16px;
     width: 16px;
     margin-right: 30px;
     cursor: pointer;
   }
-}
-}
 
+
+thead th.sticky-1{
+  background: #FAFAFA;
+  position: sticky;
+  top: 0;
+  left:0;
+  box-shadow: 0 2px 2px -1px #D5D5D5;
+  height: 57px;
+}
+thead th.sticky-2{
+  background: #FEF7EB;
+  position: sticky;
+  top: 68px;
+  //left:0;
+  border-bottom: 2px solid #D5D5D5;
+  height: 60px;
+}
 .arrow {
   height: 9px;
   width: 10px;
@@ -74,24 +105,26 @@
   cursor: pointer;
 }
 
-
-.table-outer{
-  margin: auto;
-  width: auto;
+::-webkit-scrollbar {
+  width: 10px;
 }
-.table-inner{
-  position: relative;
-  overflow: auto;
-  border: 1px solid black;
-  white-space: nowrap;
-}
-.sticky-col {
-  position: -webkit-sticky;
-  position: sticky;
-  background-color: white;
-  width: 100px;
-  min-width: 100px;
-  max-width: 100px;
-  left: 0px;
 
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: darkgrey;
+  border-radius: 10px;
+  width: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: grey;
+  width: 10px;
 }

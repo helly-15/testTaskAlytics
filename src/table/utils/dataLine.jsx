@@ -4,12 +4,12 @@ function dataLine(pageNumber,numOfLines, data) {
     console.log(pageNumber, numOfLines);
     for ( let i=(pageNumber -1)*numOfLines+1;i<=pageNumber*numOfLines;i++){
         pageTable.push(
-            <tr className='table__data'>
-                <td className='table__firstCol sticky-col '>
-                    <img src={chain} className='table__data_chain'/>
+            <tr>
+                <th className='firstCol'>
+                    <img src={chain} className='chain'/>
                     {data[i].number}
-                </td>
-                <td className='innerDivParent'>{data[i].date}</td>
+                </th>
+                <td >{data[i].date}</td>
                 <td >{data[i].income}</td>
                 <td>{data[i].profit}</td>
                 <td>{data[i].daysTo}</td>
