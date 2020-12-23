@@ -5,12 +5,12 @@ function dataLine(pageNumber,numOfLines, data) {
     for ( let i=(pageNumber -1)*numOfLines+1;i<=pageNumber*numOfLines;i++){
         pageTable.push(
             <tr>
-                <td>Green</td>
-                <td>Yellow</td>
-                <td>Orange</td>
-                <td>Green</td>
-                <td>Yellow</td>
-                <td>Orange</td>
+                <td className='table__firstCol'>{data[i].number}</td>
+                <td >{data[i].date}</td>
+                <td >{data[i].income}</td>
+                <td>{data[i].profit}</td>
+                <td>{data[i].daysTo}</td>
+                <td>{data[i].sessions}</td>
             </tr>
         )
 
