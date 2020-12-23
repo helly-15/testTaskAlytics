@@ -7,23 +7,23 @@ function Table (props) {
     return (
         <table className='table'>
             <thead>
-            <tr>
-                <th className='table__firstCol'>Номер
+            <tr className='table__title'>
+                <th className='table__firstCol sticky-1'>Номер
                     <img src={arrowDown} className='arrow'/>
                 </th>
-                <th className='table__secCol'>Дата и время</th>
-                <th className='table__thirdCol'>Выручка</th>
-                <th className='table__fourCol'>Прибыль</th>
-                <th className='table__fifCol'>Дней до сделки</th>
-                <th className='table__sixCol'>Сессий</th>
+                <th className='table__secCol sticky-1'>Дата и время</th>
+                <th className='table__thirdCol sticky-1'>Выручка</th>
+                <th className='table__fourCol sticky-1'>Прибыль</th>
+                <th className='table__fifCol sticky-1'>Дней до сделки</th>
+                <th className='table__sixCol sticky-1'>Сессий</th>
             </tr>
-            <tr>
-                <th className='table__firstCol' >Итого и среднее </th>
-                <th />
-                <th >-</th>
-                <th >-</th>
-                <th >-</th>
-                <th >-</th>
+            <tr className='table__average'>
+                <th className='table__firstCol sticky-2' >Итого и средние </th>
+                <th className='sticky-2' />
+                <th className='sticky-2'>-</th>
+                <th className='sticky-2'>-</th>
+                <th className='sticky-2'>-</th>
+                <th className='sticky-2'>-</th>
             </tr>
             </thead>
             <tbody>

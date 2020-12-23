@@ -2,15 +2,21 @@
 
 .table{
   text-align: center;
-  border-spacing: 0;
+  border-collapse: collapse;
+  position: relative;
   tr {
     height: 65px;
-    border-bottom: 0px;
+    border: 1px solid #D5D5D5
   }
-  thead tr {
-    height: 30px;
+  tr.table__title{
+    height: 57px;
     background: #FAFAFA;
 
+  }
+  tr.table__average{
+    height: 60px;
+    position: sticky;
+    top: 0;
   }
   th {
    width: 270px;
@@ -21,14 +27,45 @@
     line-height: 16px;
     letter-spacing: 0.21562500298023224px;
   }
-  &__firstCol{
-    border-right: 8px solid #FAFAFA;
+  th.sticky-1{
+    background: #FAFAFA;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 2px -1px #D5D5D5;
   }
+  th.sticky-2{
+    background: #FEF7EB;
+    position: sticky;
+    top: 57px;
+    border-bottom: 1px solid #D5D5D5
+  }
+  &__firstCol{
+    border-right: 2px solid #D5D5D5;
 
+  }
+  &__average {
+  background: #FEF7EB;
+}
+&__data{
+  font-family: Tahoma, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.2515625059604645px;
+
+  &_chain{
+    height: 16px;
+    width: 16px;
+    margin-right: 30px;
+  }
+}
 }
 
 .arrow {
   height: 9px;
   width: 10px;
   padding-left: 3px;
+  cursor: pointer;
 }
+
