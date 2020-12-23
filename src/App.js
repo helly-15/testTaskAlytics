@@ -1,27 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import Header from './header/Header';
-import Table from './header/Table';
-import Footer from './header/Footer';
+import Table from './table/Table';
+import Footer from './footer/Footer';
+import data from './data.json';
+import {useState} from "react";
 
 function App() {
+    const [pageNumber, setPageNumber] = useState(1);
+    const [numOfLines, setNumOfLines] = useState(20);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header/>
+      <Table pageNumber ={ pageNumber} numOfLines = {numOfLines} data = {data}  />
+      <Footer/>
+      </>
+
   );
 }
 
