@@ -9,11 +9,18 @@ function Table (props) {
     const {pageNumber, numOfLines, data} = props;
     //console.log(data);
     const [dataState, setDataState] = useState(data);
+    const [order, setOrder] = useState('asc')
     console.log(dataState);
     let  handleClick= (e)=> {
         console.log(dataState +' in sort');
         //e.preventDefault();
-        setDataState(sortTable(e.target.id,dataState))
+        setDataState(sortTable(e.target.id,dataState, order))
+        if (order === 'asc'){
+            setOrder('desc')
+        } else {
+            setOrder('asc')
+        }
+
     };
     console.log("Table dataState after handleClick: " + dataState);
     return (
