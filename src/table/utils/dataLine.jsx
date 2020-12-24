@@ -1,12 +1,14 @@
 import chain from '../../assets/chain.svg'
-function dataLine(pageNumber,numOfLines, data) {
+function dataLine(pageNumber,numOfLines, dataState) {
+    let data = dataState;
+    console.log(data[0].number)
     let pageTable =[];
-    for ( let i=(pageNumber -1)*numOfLines+1;i<=pageNumber*numOfLines;i++){
+    for ( let i=(pageNumber-1)*numOfLines;i<=pageNumber*numOfLines;i++){
         if(data[i]===undefined){
             return pageTable
         }
         pageTable.push(
-            <tr>
+            <tr className='row'>
                 <th className='firstCol'>
                     <img src={chain} className='chain'/>
                     {data[i].number}
