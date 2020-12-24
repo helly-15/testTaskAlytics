@@ -1,8 +1,10 @@
 import chain from '../../assets/chain.svg'
 function dataLine(pageNumber,numOfLines, data) {
     let pageTable =[];
-    //console.log(pageNumber, numOfLines);
     for ( let i=(pageNumber -1)*numOfLines+1;i<=pageNumber*numOfLines;i++){
+        if(data[i]===undefined){
+            return pageTable
+        }
         pageTable.push(
             <tr>
                 <th className='firstCol'>
