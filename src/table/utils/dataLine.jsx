@@ -1,7 +1,8 @@
-import chain from '../../assets/chain.svg'
+import chain from '../../assets/chain.svg';
+import './dataLine.scss'
 function dataLine(pageNumber,numOfLines, dataState) {
     let data = dataState;
-    console.log(data[0].number)
+    //console.log(data[0].number)
     let pageTable =[];
     for ( let i=(pageNumber-1)*numOfLines;i<=pageNumber*numOfLines;i++){
         if(data[i]===undefined){
@@ -9,7 +10,7 @@ function dataLine(pageNumber,numOfLines, dataState) {
         }
         pageTable.push(
             <tr className='row'>
-                <th className='firstCol'>
+                <th className='firstCol numLink'>
                     <img src={chain} className='chain'/>
                     {data[i].number}
                 </th>

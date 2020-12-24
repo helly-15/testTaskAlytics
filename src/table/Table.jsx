@@ -4,15 +4,16 @@ import dataLine from './utils/dataLine';
 import arrowDown from '../assets/arrowDown.svg';
 import sortTable from "./utils/sortTable";
 import {useState} from "react";
+import calcAverage from "./utils/calcAverage";
 
 function Table (props) {
     const {pageNumber, numOfLines, data} = props;
     //console.log(data);
     const [dataState, setDataState] = useState(data);
     const [order, setOrder] = useState('asc')
-    console.log(dataState);
+    //console.log(dataState);
     let  handleClick= (e)=> {
-        console.log(dataState +' in sort');
+        //console.log(dataState +' in sort');
         //e.preventDefault();
         setDataState(sortTable(e.target.id,dataState, order))
         if (order === 'asc'){
@@ -29,7 +30,6 @@ function Table (props) {
                     <thead>
                         <tr>
                             <th scope="col" id='number' className='sticky-1 firstCol' onClick={handleClick}>Номер
-                                <img src={arrowDown} className='arrow'/>
                             </th>
                             <th scope="col" id='date' className='sticky-1' onClick={handleClick}>Дата и время</th>
                             <th scope="col" id='income' className='sticky-1' onClick={handleClick}>Выручка</th>
@@ -40,10 +40,10 @@ function Table (props) {
                         <tr>
                             <th scope="col" className='sticky-2 firstCol'>Итого и средние </th>
                             <th scope="col" className='sticky-2'/>
-                            <th scope="col" className='sticky-2'>-</th>
-                            <th scope="col" className='sticky-2'>-</th>
-                            <th scope="col" className='sticky-2'>-</th>
-                            <th scope="col" className='sticky-2'>-</th>
+                            <th scope="col" className='sticky-2'>{calcAverage(dataState,'income')}</th>
+                            <th scope="col" className='sticky-2'>{calcAverage(dataState,'profit')}</th>
+                            <th scope="col" className='sticky-2'>{calcAverage(dataState,'daysTo')}</th>
+                            <th scope="col" className='sticky-2'>{calcAverage(dataState,'sessions')}</th>
                         </tr>
                     </thead>
                     <tbody>

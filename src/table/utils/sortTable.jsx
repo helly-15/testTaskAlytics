@@ -1,7 +1,7 @@
 export default function sortTable(id,data,order) {
     let sorted;
 
-    console.log(data);
+    //console.log(data);
     //let dataToSort =  data;
     if (order ==='asc'){
 
@@ -24,6 +24,6 @@ export default function sortTable(id,data,order) {
         })
     }
 
-    console.log(sorted);
+    //console.log(sorted);
     return [...sorted]
 }
