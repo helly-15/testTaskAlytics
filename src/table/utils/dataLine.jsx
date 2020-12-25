@@ -4,13 +4,29 @@ function dataLine(pageNumber,numOfLines, dataState) {
     let data = dataState;
     //console.log(data[0].number)
     let pageTable =[];
+    let deleteFunc=()=>{
+        let element = document.getElementsByTagName("td"), index;
+        for (index = element.length - 1; index >= 0; index--) {
+            element[index].classList.toggle('invisibleTd')
+        }
+        let div = document.querySelectorAll('.modal')[0];
+        div.classList.toggle('modal-visibility');
+        div.classList.toggle('flyin-grid');
+        let cards = document.querySelectorAll('.cards');
+        for( let card of cards){
+            card.classList.toggle('flyin-grid__item');
+            card.classList.toggle('card');
+        }
+        document.querySelectorAll('.table-scroll')[0].scrollTo(0, 0)
+    }
+
     for ( let i=(pageNumber-1)*numOfLines;i<=pageNumber*numOfLines;i++){
         if(data[i]===undefined){
             return pageTable
         }
         pageTable.push(
             <tr className='row'>
-                <th className='firstCol numLink'>
+                <th className='firstCol numLink' onClick={deleteFunc}>
                     <img src={chain} className='chain'/>
                     {data[i].number}
                 </th>

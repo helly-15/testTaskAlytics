@@ -124,3 +124,59 @@ thead th.sticky-2{
   background: grey;
   width: 10px;
 }
+.modal{
+  position: absolute;
+  width: 1020px;
+  height: 461px;
+  left: 234px;
+  top:150px;
+  background: #F6F6F6;
+
+}
+.modal-visibility{
+  visibility: hidden;
+}
+.flyin-grid{
+  margin: 0 1rem;
+  display:flex;
+  flex-wrap: wrap;
+  perspective: 500px;
+  &__item{
+    flex: 1 1 300px;
+    margin-left:0.5em;
+    margin-right: 0.5em;
+    max-width: 600px;
+    animation: fly-in 600ms ease-in;
+  }
+}
+.card{
+  margin-bottom: 1em;
+  padding:0.5em;
+  background-color: #F6F6F6;
+  color: #424242;
+  box-shadow: 0.2em 0.5em 1em rgba(0,0,0,0.3);
+}
+@supports (display:grid) {
+  .flyin-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:1px;
+  }
+  .flyin-grid__item{
+    max-width: initial;
+    margin: 0;
+  }
+}
+@keyframes fly-in {
+0%{
+  transform: translateZ(-800px) rotateY(90deg);
+  opacity: 0;
+}
+  56%{
+    transform: translateZ(-160px) rotateY(87deg);
+    opacity: 1;
+  }
+  100%{
+    transform: translateZ(0) rotateY(0);
+  }
+}

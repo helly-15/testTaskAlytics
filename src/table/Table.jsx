@@ -26,6 +26,17 @@ function Table (props) {
     console.log("Table dataState after handleClick: " + dataState);
     return (
             <div className='table-scroll'>
+
+                <div className="modal modal-visibility">
+                    <div className='cards'>
+                        <p>
+                            first card
+                        </p>
+                    </div>
+                    <div className='cards'>
+                        second card
+                    </div>
+                </div>
                 <table className='main-table'>
                     <thead>
                         <tr>
