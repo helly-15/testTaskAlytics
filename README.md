@@ -1,6 +1,6 @@
 # The app deploy
 
-The app is deployed on [Netlify](lena-test-task-alytics.netlify.app).
+The app is deployed on [Netlify](https://lena-test-task-alytics.netlify.app/).
 
 ## Available Scripts
 
