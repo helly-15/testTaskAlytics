@@ -1,40 +1,32 @@
 import React from 'react';
 import './Table.scss';
 import dataLine from './utils/dataLine';
-import arrowDown from '../assets/arrowDown.svg';
 import sortTable from "./utils/sortTable";
 import {useState} from "react";
 import calcAverage from "./utils/calcAverage";
 
 function Table (props) {
     const {pageNumber, numOfLines, data} = props;
-    //console.log(data);
     const [dataState, setDataState] = useState(data);
-    const [order, setOrder] = useState('asc')
-    //console.log(dataState);
+    const [order, setOrder] = useState('asc');
+
     let  handleClick= (e)=> {
-        //console.log(dataState +' in sort');
-        //e.preventDefault();
+
         setDataState(sortTable(e.target.id,dataState, order))
         if (order === 'asc'){
             setOrder('desc')
         } else {
             setOrder('asc')
         }
-
     };
-    console.log("Table dataState after handleClick: " + dataState);
+
     return (
             <div className='table-scroll'>
 
                 <div className="modal modal-visibility">
                     <div className='cards'>
-                        <p>
-                            first card
-                        </p>
                     </div>
                     <div className='cards'>
-                        second card
                     </div>
                 </div>
                 <table className='main-table'>

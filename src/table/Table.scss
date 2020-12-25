@@ -180,3 +180,28 @@ thead th.sticky-2{
     transform: translateZ(0) rotateY(0);
   }
 }
+.cards{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: Tahoma, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0.2875001132488251px;
+  text-align: left;
+}
+.cards table{
+  min-width: 100px;
+}
+.pHide{
+  font-family: Tahoma,sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.19903850555419922px;
+  text-align: left;
+  color:#2B6893;
+  cursor: pointer;
+}
