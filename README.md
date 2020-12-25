@@ -1,6 +1,6 @@
 # The app deploy
 
-The app is deployed on [Netlify](https://app.netlify.com/teams/helly-15-5crhrc4/overview).
+The app is deployed on [Netlify](lena-test-task-alytics.netlify.app).
 
 ## Available Scripts
 
