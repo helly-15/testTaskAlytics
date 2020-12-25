@@ -4,12 +4,12 @@ import dataLine from './utils/dataLine';
 import sortTable from "./utils/sortTable";
 import {useState} from "react";
 import calcAverage from "./utils/calcAverage";
+import PropTypes from 'prop-types';
 
 function Table (props) {
     const {pageNumber, numOfLines, data} = props;
     const [dataState, setDataState] = useState(data);
     const [order, setOrder] = useState('asc');
-
     let  handleClick= (e)=> {
         setDataState(sortTable(e.target.id,dataState, order))
         if (order === 'asc'){
@@ -58,3 +58,9 @@ function Table (props) {
 }
 
 export default Table;
+
+Table.propTypes = {
+    pageNumber: PropTypes.number,
+    numOfLines: PropTypes.number,
+    data: PropTypes.object,
+};

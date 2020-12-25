@@ -37,16 +37,6 @@ let modalFunc=(e, data)=>{
                 <tr><td>Дней до</td><td>${data.daysTo}</td></tr>
                 </table>
                 `
-            // let p = document.createElement("p");
-            // let p2 = document.createElement("a");
-            //p2.onclick =clear;
-            // p.innerText = `Сделка № ${e.target.innerText}`;
-            // p2.innerText = 'Скрыть детали >';
-            // p2.classList.add('pHide');
-            // cards[i].appendChild(p2);
-            // cards[i].appendChild(p);
-            //let modalTable = <ModalTable data ={data}>;
-            //cards[i].appendChild(modalTable);
             document.querySelectorAll('.pHide')[0].onclick = clear;
 
         } else{
@@ -59,7 +49,6 @@ let modalFunc=(e, data)=>{
             cards[i].appendChild(p);
             cards[i].appendChild(innerDiv);
         }
-
     }
     document.querySelectorAll('.table-scroll')[0].scrollTo(0, 0)
 

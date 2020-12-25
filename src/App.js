@@ -12,10 +12,7 @@ function App() {
     const [numOfLines, setNumOfLines] = useState(20);
     let handlePageClick = (e) => {
         setPageNumber(e.selected+1)
-        //console.log( e.selected)
     };
-   // console.log(pageNumber)
-  // console.log(data)
   return (
     <div className='paginatedTable'>
       <Header/>

@@ -21,12 +21,14 @@ function dataLine(pageNumber,numOfLines, dataState) {
                 <td className='innerDivParent'>{data[i].sessions}</td>
             </tr>
         )
-
     }
     return pageTable
     ;
 }
 export default dataLine;
+
+
+
 
 function formatDate(dateToFormat) {
     let parsed = new Date(Date.parse(dateToFormat));
@@ -38,6 +40,7 @@ function formatDate(dateToFormat) {
         hour: 'numeric',
         minute: 'numeric'
     };
+
     let formatted = parsed.toLocaleDateString('ru-Ru', options);
     let regexp = /[\s\u0433]\./g;
     let regexp2 = /\s,/g;
