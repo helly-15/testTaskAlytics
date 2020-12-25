@@ -39,7 +39,6 @@ function formatDate(dateToFormat) {
         minute: 'numeric'
     };
     let formatted = parsed.toLocaleDateString('ru-Ru', options);
-
     let regexp = /[\s\u0433]\./g;
     let regexp2 = /\s,/g;
     let regexp3 = /\./g;

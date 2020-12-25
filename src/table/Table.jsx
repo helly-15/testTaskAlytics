@@ -11,7 +11,6 @@ function Table (props) {
     const [order, setOrder] = useState('asc');
 
     let  handleClick= (e)=> {
-
         setDataState(sortTable(e.target.id,dataState, order))
         if (order === 'asc'){
             setOrder('desc')
