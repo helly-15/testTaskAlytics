@@ -10,12 +10,14 @@
 }
 .table-scroll tr {
   height: 65px;
-  border: 1px solid #D5D5D5
+  border-bottom: 2px solid #D5D5D5;
+
+
 }
 .table-scroll table {
   min-width: 1280px;
   margin: auto;
-  border-collapse: collapse;
+  border-collapse: separate;
   border-spacing: 0;
   text-align: left;
   vertical-align: middle;
@@ -30,6 +32,7 @@
   vertical-align: middle;
   min-width: 210px;
   width: 210px;
+  border-bottom: 1px solid #D5D5D5;
 }
 .table-scroll th{
   font-family: Tahoma, sans-serif;
@@ -57,7 +60,7 @@
 th:first-child {
   position: -webkit-sticky;
   position: sticky;
-  left: -2px;
+  left: 0;
   z-index: 2;
   background: white;
 }
@@ -69,6 +72,8 @@ thead th:first-child {
 
  .firstCol{
     border-right: 2px solid #D5D5D5;
+    box-sizing: border-box;
+   //box-shadow: 0 2px 2px -1px #D5D5D5;
   }
 
 
@@ -85,7 +90,10 @@ thead th.sticky-1{
   position: sticky;
   top: 0;
   left:0;
-  box-shadow: 0 2px 2px -1px #D5D5D5;
+  //border-top: 2px solid #D5D5D5;
+  //border-bottom: 2px solid #D5D5D5;
+  //border-right: 2px solid #D5D5D5;
+  //box-shadow: 0 2px 2px -1px #D5D5D5;
   height: 57px;
   cursor: pointer;
 }
