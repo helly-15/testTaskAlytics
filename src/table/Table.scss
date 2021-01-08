@@ -210,5 +210,25 @@ thead th.sticky-2{
   color:#2B6893;
   cursor: pointer;
 }
+.arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  padding: 1px;
+  width: 1px;
+  height: 1px;
+ // display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 2px;
+  display: none;
 
+}
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  display: none;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 
+}

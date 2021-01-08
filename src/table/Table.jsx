@@ -11,12 +11,21 @@ function Table (props) {
     const [dataState, setDataState] = useState(data);
     const [order, setOrder] = useState('asc');
     let  handleClick= (e)=> {
-        setDataState(sortTable(e.target.id,dataState, order))
+        e.nativeEvent.stopImmediatePropagation();
+        let elements = document.querySelectorAll('.arrow');
+        for (let arrow of elements){
+            arrow.style.display = 'inline-block';
+            arrow.classList.toggle('down');
+            arrow.classList.toggle('up');
+        }
+        setDataState(sortTable(e.currentTarget.id||e.target.parentNode.id,dataState, order))
         if (order === 'asc'){
             setOrder('desc')
         } else {
             setOrder('asc')
         }
+
+console.log(e.currentTarget.id)
     };
 
     return (
@@ -30,13 +39,13 @@ function Table (props) {
                 <table className='main-table'>
                     <thead>
                         <tr>
-                            <th scope="col" id='number' className='sticky-1 firstCol' onClick={handleClick}>Номер
+                            <th scope="col" id='number' className='sticky-1 firstCol' onClick={handleClick} >Номер<i className="arrow up"/>
                             </th>
-                            <th scope="col" id='date' className='sticky-1' onClick={handleClick}>Дата и время</th>
-                            <th scope="col" id='income' className='sticky-1' onClick={handleClick}>Выручка</th>
-                            <th scope="col" id='profit' className='sticky-1' onClick={handleClick}>Прибыль</th>
-                            <th scope="col" id='daysTo' className='sticky-1' onClick={handleClick}>Дней до сделки</th>
-                            <th scope="col" id='sessions' className='sticky-1' onClick={handleClick}>Сессий</th>
+                            <th scope="col" id='date' className='sticky-1' onClick={handleClick}>Дата и время<i className="arrow up"/> </th>
+                            <th scope="col" id='income' className='sticky-1' onClick={handleClick}>Выручка<i className="arrow up"/></th>
+                            <th scope="col" id='profit' className='sticky-1' onClick={handleClick}>Прибыль<i className="arrow up"/></th>
+                            <th scope="col" id='daysTo' className='sticky-1' onClick={handleClick}>Дней до сделки<i className="arrow up"/></th>
+                            <th scope="col" id='sessions' className='sticky-1' onClick={handleClick}>Сессий<i className="arrow up"/></th>
                         </tr>
                         <tr>
                             <th scope="col" className='sticky-2 firstCol'>Итого и средние </th>
