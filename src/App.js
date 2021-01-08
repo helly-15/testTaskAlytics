@@ -24,7 +24,7 @@ function App() {
             nextLabel={'>'}
             breakLabel={'...'}
             breakClassName={'break-me'}
-            pageCount={8}
+            pageCount={data.array.length/numOfLines}
             marginPagesDisplayed={1}
             pageRangeDisplayed={2}
             onPageChange={handlePageClick}
