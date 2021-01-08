@@ -1,9 +1,10 @@
 function calcAverage(data, field) {
     let newData = [...data];
     if(typeof newData[0][field] ==='string'){
-        return Math.floor(newData.reduce(function (accumulator, currentValue) {
-            return accumulator + +currentValue[field][0]
-        }, 0)/newData.length) + ' дня'
+        let day = Math.floor(newData.reduce(function (accumulator, currentValue) {
+            return accumulator + parseInt(currentValue[field]);
+        }, 0)/newData.length)
+        return day +` ${declOfNum(day, ['день', 'дня', 'дней'])}`
     } else {
         return Math.floor(newData.reduce(function (accumulator, currentValue) {
             return accumulator + currentValue[field]
@@ -11,3 +12,13 @@ function calcAverage(data, field) {
     }
 }
 export default calcAverage;
+
+
+
+function declOfNum(n, text_forms) {
+    n = Math.abs(n) % 100; var n1 = n % 10;
+    if (n > 10 && n < 20) { return text_forms[2]; }
+    if (n1 > 1 && n1 < 5) { return text_forms[1]; }
+    if (n1 === 1) { return text_forms[0]; }
+    return text_forms[2];
+}
