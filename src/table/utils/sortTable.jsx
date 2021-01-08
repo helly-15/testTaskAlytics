@@ -6,7 +6,7 @@ export default function sortTable(id,data,order) {
                  return  new Date(Date.parse(a[id])) - new Date(Date.parse(b[id]))
              }
             else if(typeof a[id] ==='string'){
-                 return a[id][0]- b[id][0]
+                 return parseInt(a[id])- parseInt(b[id])
              } else {
                  return a[id]-b[id]
              }
@@ -17,7 +17,7 @@ export default function sortTable(id,data,order) {
                 return  new Date(Date.parse(b[id])) - new Date(Date.parse(a[id]))
             }
             else if(typeof a[id] ==='string'){
-                return b[id][0]- a[id][0]
+                return parseInt(b[id])- parseInt(a[id])
             } else {
                 return b[id]-a[id]
             }

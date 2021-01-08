@@ -1,5 +1,6 @@
 
 let modalFunc=(e, data)=>{
+  e.preventDefault();
     let element = document.getElementsByTagName("td"), index;
     for (index = element.length - 1; index >= 0; index--) {
         element[index].classList.add('invisibleTd')
@@ -30,7 +31,7 @@ let modalFunc=(e, data)=>{
             cards[i].innerHTML =`
                <p> Сделка № ${ e.target.innerText }</p>
                <p class="pHide"> Скрыть детали</p>
-               <table> 
+               <table>
                <tr><td>Номер</td><td>${data.number}</td></tr>
                 <tr><td>Выручка</td><td>${data.income}</td></tr>
                 <tr><td>Прибыль</td><td>${data.profit}</td></tr>
@@ -51,6 +52,6 @@ let modalFunc=(e, data)=>{
         }
     }
     document.querySelectorAll('.table-scroll')[0].scrollTo(0, 0)
-
+return false;
 }
 export default modalFunc;

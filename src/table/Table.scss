@@ -73,7 +73,6 @@ thead th:first-child {
  .firstCol{
     border-right: 2px solid #D5D5D5;
     box-sizing: border-box;
-   //box-shadow: 0 2px 2px -1px #D5D5D5;
   }
 
 
@@ -90,10 +89,6 @@ thead th.sticky-1{
   position: sticky;
   top: 0;
   left:0;
-  //border-top: 2px solid #D5D5D5;
-  //border-bottom: 2px solid #D5D5D5;
-  //border-right: 2px solid #D5D5D5;
-  //box-shadow: 0 2px 2px -1px #D5D5D5;
   height: 57px;
   cursor: pointer;
 }
@@ -215,3 +210,5 @@ thead th.sticky-2{
   color:#2B6893;
   cursor: pointer;
 }
+
+

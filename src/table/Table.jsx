@@ -21,7 +21,6 @@ function Table (props) {
 
     return (
             <div className='table-scroll'>
-
                 <div className="modal modal-visibility">
                     <div className='cards'>
                     </div>

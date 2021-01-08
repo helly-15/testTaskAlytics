@@ -10,7 +10,11 @@ function dataLine(pageNumber,numOfLines, dataState) {
         }
         pageTable.push(
             <tr className='row'>
-                <th className='firstCol numLink' onClick={(e)=>modalFunc(e,data[i])}>
+                <th className='firstCol numLink' onClick={(e)=>{e.preventDefault();
+                e.nativeEvent.stopImmediatePropagation();
+
+                e.stopPropagation();
+                modalFunc(e,data[i])}}>
                     <img src={chain} className='chain' alt ='chain'/>
                     {data[i].number}
                 </th>
