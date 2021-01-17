@@ -1,6 +1,6 @@
 function calcAverage(data, field) {
     let newData = [...data];
-    if(typeof newData[0][field] ==='string'){
+    if(typeof newData[0][field] === 'string'){
         let day = Math.floor(newData.reduce(function (accumulator, currentValue) {
             return accumulator + parseInt(currentValue[field]);
         }, 0)/newData.length)

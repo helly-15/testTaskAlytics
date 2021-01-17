@@ -14,23 +14,23 @@ function App() {
         setPageNumber(e.selected+1)
     };
   return (
-    <div className='paginatedTable'>
+    <div className = 'paginatedTable'>
       <Header/>
-      <Table pageNumber ={pageNumber} numOfLines = {numOfLines} data = {data.array}  />
+      <Table pageNumber = {pageNumber} numOfLines = {numOfLines} data = {data.array}  />
       <Footer/>
-      <div className='pagContainer'>
+      <div className = 'pagContainer'>
         <ReactPaginate
-            previousLabel={'<'}
-            nextLabel={'>'}
-            breakLabel={'...'}
-            breakClassName={'break-me'}
-            pageCount={data.array.length/numOfLines}
-            marginPagesDisplayed={1}
-            pageRangeDisplayed={2}
-            onPageChange={handlePageClick}
-            containerClassName={'pagination'}
-            subContainerClassName={'pages pagination'}
-            activeClassName={'active'}
+            previousLabel = {'<'}
+            nextLabel = {'>'}
+            breakLabel = {'...'}
+            breakClassName = {'break-me'}
+            pageCount = {data.array.length/numOfLines}
+            marginPagesDisplayed = {1}
+            pageRangeDisplayed = {2}
+            onPageChange = {handlePageClick}
+            containerClassName = {'pagination'}
+            subContainerClassName = {'pages pagination'}
+            activeClassName = {'active'}
         />
       </div>
       </div>

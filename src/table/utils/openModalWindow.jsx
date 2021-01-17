@@ -9,7 +9,7 @@ let modalFunc=(e, data)=>{
     div.classList.remove('modal-visibility');
     div.classList.add('flyin-grid');
     let cards = document.querySelectorAll('.cards');
-    let clear = ()=>{
+    let clear = ()=> {
         for (index = element.length - 1; index >= 0; index--) {
             element[index].classList.remove('invisibleTd')
         }
@@ -18,19 +18,19 @@ let modalFunc=(e, data)=>{
         for(let card of cards){
             card.classList.remove('flyin-grid__item');
             card.classList.remove('card');
-            card.innerText ='';
+            card.innerText = '';
         }
     }
 
 
-    for( let i=0;i<cards.length;i++){
-        cards[i].innerText ='';
+    for( let i = 0;i < cards.length;i++){
+        cards[i].innerText = '';
         cards[i].classList.add('flyin-grid__item');
         cards[i].classList.add('card');
-        if(i===0){
+        if(i === 0){
             cards[i].innerHTML =`
                <p> Сделка № ${ e.target.innerText }</p>
-               <p class="pHide"> Скрыть детали</p>
+               <p class = "pHide"> Скрыть детали</p>
                <table>
                <tr><td>Номер</td><td>${data.number}</td></tr>
                 <tr><td>Выручка</td><td>${data.income}</td></tr>
